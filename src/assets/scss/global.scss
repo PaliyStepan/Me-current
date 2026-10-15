@@ -24,6 +24,12 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+body + #layero-badge {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  display: none !important;
+}
+
 *,
 *:before,
 *:after {
