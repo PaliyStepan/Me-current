@@ -286,14 +286,14 @@ const projects: IProject[] = [
     role: ['Адаптивная и кросс-браузерная вёрстка', 'Написание js функционала'],
     type: 'landing',
   },
-  {
-    title: 'Jtlogistix',
-    description: 'Лендинг логистической компании',
-    link: 'https://www.jtlogistix.com',
-    img: '/images/jtl.png',
-    role: ['Адаптивная и кросс-браузерная вёрстка', 'Написание js функционала'],
-    type: 'landing',
-  },
+  // {
+  //   title: 'Jtlogistix',
+  //   description: 'Лендинг логистической компании',
+  //   link: 'https://www.jtlogistix.com',
+  //   img: '/images/jtl.png',
+  //   role: ['Адаптивная и кросс-браузерная вёрстка', 'Написание js функционала'],
+  //   type: 'landing',
+  // },
   {
     title: 'Protecogroup',
     description: 'Лендинг фармацевтической компании',
