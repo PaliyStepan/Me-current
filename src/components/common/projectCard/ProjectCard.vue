@@ -53,7 +53,7 @@ const handleAboutClick = () => {
 
     @media (max-width: 576px) {
       margin-bottom: 16px;
-      height: 300px;
+      height: 270px;
     }
 
     @media (max-width: 390px) {
