@@ -140,4 +140,17 @@ img {
     background-color: var(--color-green);
     border-radius: 8px;
   }
+
+  &--sm {
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-gray);
+      border-radius: 8px;
+    }
+
+  }
 }

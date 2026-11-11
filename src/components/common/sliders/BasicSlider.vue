@@ -10,11 +10,7 @@
       class="slider-basic__swiper"
       @swiper="onSwiper"
     >
-      <SwiperSlide
-        v-for="project in items"
-        :key="project.title"
-        class="slider-basic__slide"
-      >
+      <SwiperSlide v-for="project in items" :key="project.title" class="slider-basic__slide">
         <ProjectCard
           :title="project.title"
           :link="project.link"
@@ -25,7 +21,10 @@
       </SwiperSlide>
     </Swiper>
 
-    <button class="slider-basic__button slider-basic__button--prev jsSliderButtonPrev" aria-label="Previous slide">
+    <button
+      class="slider-basic__button slider-basic__button--prev jsSliderButtonPrev"
+      aria-label="Previous slide"
+    >
       <svg
         width="24"
         height="24"
@@ -43,7 +42,10 @@
       </svg>
     </button>
 
-    <button class="slider-basic__button slider-basic__button--next jsSliderButtonNext" aria-label="Next slide">
+    <button
+      class="slider-basic__button slider-basic__button--next jsSliderButtonNext"
+      aria-label="Next slide"
+    >
       <svg
         width="24"
         height="24"
@@ -62,11 +64,10 @@
     </button>
   </div>
 
-
   <ModalBase
     v-model="showModal"
     :title="currentProject.title"
-    :description="currentProject.description"
+    :description="currentProject.details || currentProject.description"
     :role="currentProject.role"
     :link="currentProject.link"
   >
@@ -83,7 +84,6 @@ import ProjectCard from '@/components/common/projectCard/ProjectCard.vue'
 import 'swiper/css'
 import { onMounted, ref, watch, nextTick } from 'vue'
 import ModalBase from '@/components/common/modal/ModalBase.vue'
-
 
 defineSlots<{
   default(): unknown
@@ -162,7 +162,6 @@ watch(
     }, 100)
   },
 )
-
 </script>
 
 <style scoped lang="scss">

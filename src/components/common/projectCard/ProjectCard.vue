@@ -53,6 +53,10 @@ const handleAboutClick = () => {
 
     @media (max-width: 576px) {
       margin-bottom: 16px;
+      height: 300px;
+    }
+
+    @media (max-width: 390px) {
       height: 230px;
     }
 
@@ -76,6 +80,10 @@ const handleAboutClick = () => {
       transform $default-transition,
       filter $default-transition;
     filter: grayscale(1);
+
+    @media (max-width: 576px) {
+      filter: grayscale(0);
+    }
   }
 
   &__title {

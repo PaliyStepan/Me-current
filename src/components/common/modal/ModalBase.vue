@@ -6,11 +6,20 @@
     v-on="modalEvents || {}"
   >
     <div class="modal-base__inner">
-      <div class="modal-base__jumbotron">
+      <div class="modal-base__jumbotron custom-scroll custom-scroll--sm">
         <button type="button" class="modal-base__close" @click="closeModal">
-          <svg class="modal-base__close-icon" width="18" height="18" viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.8318 9.0002L17.6506 16.819L16.8189 17.6508L9.00003 9.83196L1.18121 17.6508L0.349443 16.819L8.16827 9.0002L0.348267 1.18137L1.18003 0.349609L9.00003 8.16843L16.8189 0.349609L17.6506 1.18137L9.8318 9.0002Z">
-            </path></svg>
+          <svg
+            class="modal-base__close-icon"
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.8318 9.0002L17.6506 16.819L16.8189 17.6508L9.00003 9.83196L1.18121 17.6508L0.349443 16.819L8.16827 9.0002L0.348267 1.18137L1.18003 0.349609L9.00003 8.16843L16.8189 0.349609L17.6506 1.18137L9.8318 9.0002Z"
+            ></path>
+          </svg>
         </button>
 
         <div v-if="title" class="modal-base__title">
@@ -22,21 +31,48 @@
         </div>
 
         <div v-if="role" class="modal-base__role">
-          <div class="modal-base__role-title">
-            Что делал:
-          </div>
-          <div
-            v-for="(r, index) in role"
-            :key="index"
-            class="modal-base__role-item"
-          >
+          <div class="modal-base__role-title">Что делал:</div>
+          <div v-for="(r, index) in role" :key="index" class="modal-base__role-item">
             {{ r }}
           </div>
         </div>
 
         <a v-if="link" :href="link" target="_blank" class="modal-base__link">
-          {{ link }}
-          <svg data-v-cac522ed="" class="modal-base__link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path data-v-cac522ed="" d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path data-v-cac522ed="" d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path data-v-cac522ed="" d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          Смотреть проект
+          <svg
+            data-v-cac522ed=""
+            class="modal-base__link-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              data-v-cac522ed=""
+              d="M18 13V19C18 19.5304 17.7893 20.0391 17.4142 20.4142C17.0391 20.7893 16.5304 21 16 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V8C3 7.46957 3.21071 6.96086 3.58579 6.58579C3.96086 6.21071 4.46957 6 5 6H11"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              data-v-cac522ed=""
+              d="M15 3H21V9"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              data-v-cac522ed=""
+              d="M10 14L21 3"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
         </a>
       </div>
     </div>
@@ -125,7 +161,6 @@ const modalPropsWithDefaults = computed<TModalProps>(() => {
   overflow-y: auto;
   scrollbar-width: none;
 
-
   $block: &;
 
   .vfm__content {
@@ -176,6 +211,11 @@ const modalPropsWithDefaults = computed<TModalProps>(() => {
       -webkit-border-radius: 16px;
       border-radius: 16px;
     }
+
+    @media (max-width: 576px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   &__jumbotron {
@@ -186,6 +226,11 @@ const modalPropsWithDefaults = computed<TModalProps>(() => {
 
     @media (max-width: 1200px) {
       padding: 28px;
+    }
+
+    @media (max-width: 576px) {
+      max-height: 90vh;
+      overflow: auto;
     }
   }
 
@@ -233,7 +278,8 @@ const modalPropsWithDefaults = computed<TModalProps>(() => {
     line-height: 100%;
 
     @media (max-width: 576px) {
-      font-size: 18px;
+      font-size: 16px;
+      line-height: 18px;
     }
   }
 
